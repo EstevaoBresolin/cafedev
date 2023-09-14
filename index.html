@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WECODE</title>
+    <link rel="shortcut icon" href="imagens/Camada 1.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2? family= Bebas+Neue & family= Oswald:wght@200 & family= Raleway:wght@100 & display=swap");
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+    </style>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter&family=Roboto+Mono:wght@700&display=swap');
+    </style>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+    </style>
+  </head>
+ 
+  <body>
+    <div id="modal">
+      <div id="login">
+        <p id="fecharModal" class="pointer" onclick="fecharModal()">X</p>
+        <p>Login</p>
+        <form action="">
+          <p>Usuario:
+          <input type="text" id="usuario" class="input" placeholder="Digite seu usuario" >
+        </p>
+        <p>Senha:
+          <input type="password" id="senha" class="input" placeholder="Digite sua senha">
+        </p>
+        
+      </form>
+      <button class="input botao pointer" onclick="logar()">Logar</button>
+      <button id="registrar" class="input botao pointer" onclick="registrar()">Registrar-se</button>
+        <p id="validacao" class="pointer"></p>
+      </div>
+    </div>
+
+
+    <div id="modalRegistrar">
+      <div id="registrarUsuario">
+        <p id="fecharModalRegistrar" class="pointer" onclick="fecharModalRegistrar()">X</p>
+        <p>Registrar-se</p>
+        <form action="">
+          <p>Usuario:
+          <input type="text" id="usuarioCadastrado" class="input" placeholder="Digite seu usuario" >
+        </p>
+        <p>Senha:
+          <input type="password" id="senhaCadastrada" class="input" placeholder="Digite sua senha">
+        </p>
+        
+      </form>
+      <button class="input botao pointer" onclick="voltar()">Voltar</button>
+      <button id="salvar" class="input botao pointer" onclick="salvar()">Salvar</button>
+        <p id="validacaoOk" class="pointer"></p>
+      </div>
+    </div>
+
+    <header>
+      <div id="header">
+        <div id="left">
+          <nav class="menuLateral">
+            <div class="btn-expandir">
+              <i class="bi bi-list" id="iBurguer" onclick="clickMenu()"></i>
+            </div>
+            <div id="menuExpandido">
+              <div id="cabecalho">
+                <img src="imagens/logo.png" alt="logo" />
+                <i
+                  class="bi bi-x-lg"
+                  id="clickFechar"
+                  onclick="clickFechar()"
+                ></i>
+              </div>
+              <div id="cafeGamer">
+                <div id="text">
+                  <div id="cafeTitulo"><h2>Café Gamer</h2></div>
+                  <p>
+                    Perfeito para aquela madrugada de <br />
+                    lançamento de jogo novo
+                  </p>
+                </div>
+              </div>
+              <div id="cafes">
+                <p class="clickCafe">
+                  Café especial
+                  <i class="bi bi-arrow-down" onclick="clickCafe()"></i>
+                </p>
+                <div id="cafeEspecial">
+                  <p class="cafe">Café Cyborg</p>
+                  <p class="cafe">Café Star Wars</p>
+                  <p class="cafe">Café Dark Elf</p>
+                  <p class="cafe">Ver todos</p>
+                </div>
+
+                <p class="clickCafe">
+                  <strong
+                    >Cafés tradicionais <i class="bi bi-arrow-down"></i
+                  ></strong>
+                </p>
+                <p class="clickCafe">Kits <i class="bi bi-arrow-down"></i></p>
+                <p id="weCoffe">Wecoffee Club+</p>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <i class="bi bi-search"></i>
+        <img id="logo" src="imagens/logo.png" alt="logo" />
+        <div id="right">
+          <p id="nomeUsuario"></p>
+          <i class="bi bi-person" onclick="login()"></i>
+          <i class="bi bi-bag"></i>
+          <p id="carrinho">0</p>
+        </div>
+      </div>
+    </header>
+    
+    <main>
+      <div id="banner">
+        <div id="bannerImg">
+          <div id="cafeDev">
+            <p class="tituloCafeDev">.[Café Dev];</p>
+            <p class="tituloCafeDev">500ml</p>
+            <p id="desconto">com 10%OFF</p>
+          </div>
+          <div id="rodapeCafeDev">
+            <p id="vejaMais">Veja mais</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="opcoesCafe">
+        <div class="opcoesCafeItem">
+          <img
+            class="imgCafe"
+            src="imagens/deliciosas-xicaras-de-cafe-dentro-de-casa 1.png"
+            alt="img café"
+          />
+          <p class="descOpcoesCafe">Especiais</p>
+        </div>
+        <div class="opcoesCafeItem">
+          <img
+            class="imgCafe"
+            src="imagens/deliciosos-graos-de-cafe-e-xicara 1.png"
+            alt="img café"
+          />
+          <p class="descOpcoesCafe">Tradicionais</p>
+        </div>
+        <div class="opcoesCafeItem">
+          <img
+            class="imgCafe"
+            src="imagens/ferramentas-usadas-no-processo-de-fazer-cafe 1.png"
+            alt="img café"
+          />
+          <p class="descOpcoesCafe">Kits</p>
+        </div>
+        <div class="opcoesCafeItem">
+          <img
+            class="imgCafe"
+            src="imagens/amigos-de-baixo-angulo-sorridente-bebendo-cafe 1.png"
+            alt="img café"
+          />
+          <p class="wecoffeLetra">Wecoffee</p>
+          <p class="wecoffeLetra">Club+</p>
+        </div>
+      </div>
+
+      <div id="favoritos">
+        <h3 class="titulo">Os favoritos da casa</h3>
+        <p class="desc">Conheça os cafés queridinhos da galera!</p>
+        <div id="produtos">
+          <div class="produto">
+            <div id="trocarFavorito" onclick="adicionarFavorito()"><img    class="iconFavorito" id="iconFavorito" src="imagens/Favorito.svg" alt="" >
+            </div>
+            <img
+              class="imgProduto"
+              src="imagens/0Y1A6402 1.png"
+              alt="cafe Dev"
+            />
+            <img class="adicionarCarrinho" src="imagens/Group 2.svg" alt="botaoCarrinho" onclick="adicionarCarrinho()">
+            <p class="tituloCafe">Café Dev - 500ml</p>
+            <p class="descCafe">Rapadura, Floral, papaia, cítrico</p>
+            <p>R$ 15,90</p>
+          </div>
+          <div class="produto">
+            <div id="trocarFavo" onclick="adicionarFavo()"><img    class="iconFavo" id="iconFavo" src="imagens/Favorito.svg" alt="" >
+            </div>
+            <img
+              class="imgProduto"
+              src="imagens/0Y1A6402 2.png"
+              alt="cafe Designer"
+            />
+            <img class="adicionarCarrinho" src="imagens/Group 2.svg" alt="botaoCarrinho" onclick="adicionarCarrinho()">
+            <p class="tituloCafe">Café Designer - 500ml</p>
+            <p class="descCafe">Doce de leite, chocolate e nozes</p>
+            <p>R$ 15,90</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="conteudos">
+        <h3 class="titulo">Conheça mais</h3>
+        <p class="desc">Fique por dentro de tudo que acontece no universo cafeeiro</p>
+        <div id="conteudo">
+          <div class="noticia">
+            <img
+              class="imgNoticia"
+              src="imagens/deliciosa-xicara-de-cafe-dentro-de-casa 1.png"
+              alt="xicara de café"
+            />
+            <p class="tituloNoticia">Café corta o efeito da creatina? Entenda como tomar!</p>
+            <p class="descNoticia">Uma dúvida recorrente das pessoas que treinam e/ou fazem musculação é: “Será que o café corta o efeito da...</p>
+            <p class="saibaMis"><u>Saiba mais!</u></p>
+          </div>
+          <div class="noticia">
+            <img
+              class="imgNoticia"
+              src="imagens/casal-pedindo-comida-no-restaurante 1.png"
+              alt=""
+            />
+            <p class="tituloNoticia">Cardápio de cafeteria: Saiba como montar e o que oferecer!</p>
+            <p class="descNoticia">Abrir uma cafeteria é uma ótima oportunidade para aproveitar o alto potencial de lucratividade desse...</p>
+            <p class="saibaMis"><u>Saiba mais!</u></p>
+          </div>
+          
+          <div class="noticia">
+            <img
+              class="imgNoticia"
+              src="imagens/prato-de-sobremesa-gourmet-com-ai-generativa-de-caramelo-e-frutas 1.png"
+              alt=""
+            />
+            <p class="tituloNoticia">Como fazer pudim de café com ou sem forno: Aprenda aqui!</p>
+            <p class="descNoticia">Além de ser o queridinho do brasileiro no dia a dia, o café é um ingrediente muito versátil para diversas receitas doces...</p>
+            <p class="saibaMis"><u>Saiba mais!</u></p>
+          </div>
+
+          <div class="noticia">
+            <img
+              class="imgNoticia"
+              src="imagens/image 1.png"
+              alt=""
+            />
+            <p class="tituloNoticia">Café Arábica: saiba o que é e quais as diferenças do grão</p>
+            <p class="descNoticia">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna...</p>
+            <p class="saibaMis"><u>Saiba mais!</u></p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+  <footer>
+    <div id="cabecalhoFooter">
+      <img id="logoFooter" src="imagens/Camada 1.png" alt="">
+      <p id="descLogoFooter">©2023 Wecode Tecnologia para e-commerce ltda. Todos os direitos reservados.</p>
+    </div>
+    <div id="conteudoFooter">
+      <div class="opcoesConteudoFooter">
+        <p class="tituloConteudo">Conecte-se conosco</p>
+        <a href="https://www.instagram.com/wecode.digital/" target="_blank"><i class="bi bi-instagram redes"></i></a>
+        <a href="https://www.facebook.com/wecode.digital" target="_blank"><i class="bi bi-facebook redes"></i></a>
+        <i class="bi bi-pinterest redes"></i>
+        <i class="bi bi-twitter redes"></i>
+        <i class="bi bi-tiktok redes"></i>
+      </div>
+      <div class="opcoesConteudoFooter">
+        <p class="tituloConteudoFooter">Sobre a empresa</p>
+        <p class="descConteudoFooter">Quem somos</p>
+        <p class="descConteudoFooter">Fale conosco</p>
+        <p class="descConteudoFooter">Produção Nacional de Café</p>
+      </div>
+      <div class="opcoesConteudoFooter">
+        <p class="tituloConteudoFooter">E-mail</p>
+        <p class="descConteudoFooter">ola@wecode.digital</p>
+      </div>
+      <div class="opcoesConteudoFooter">
+        <p class="tituloConteudoFooter">Telefone</p>
+        <p class="descConteudoFooter">+55 (54) 3028-9452</p>
+      </div>
+      <div class="opcoesConteudoFooter">
+        <p class="tituloConteudoFooter">Endereço</p>
+        <p class="descConteudoFooter">Rua Independência, 2432 - sala 418 <br>
+          Caxias do Sul, RS - 95.082-380</p>
+      </div>
+      <div class="opcoesConteudoFooter">
+        <p class="tituloConteudoFooter">Políticas</p>
+        <p class="descConteudoFooter">Política de Privacidade</p>
+        <p class="descConteudoFooter">Termos de Uso</p>
+        <p class="descConteudoFooter">Política de Entrega</p>
+        <p class="descConteudoFooter">Política de Cupom e Descontos</p>
+      </div>
+    </div>
+    
+  </footer>
+</html>
